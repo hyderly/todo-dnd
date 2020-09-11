@@ -1,0 +1,41 @@
+.add-item {
+  width: 300px;
+  max-height: 300px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: #2d4059;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 50px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.add-item input {
+  width: 100%;
+  height: 25px;
+  font-size: 18px;
+  color: #222;
+  font-weight: 400;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #111;
+  text-transform: capitalize;
+}
+
+.add-item input:nth-child(3) {
+  height: 100px;
+}
+
+.done-btn:hover {
+  cursor: pointer;
+}
