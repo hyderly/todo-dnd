@@ -1,16 +1,46 @@
 import React, { useState } from "react";
 import "./addItem.styles.css";
 
-const AddItem = () => {
+import uuid from "react-uuid";
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+import { connect } from "react-redux";
+//redux
+import { toggleHidden, addItem } from "../../redux/task/task.actions";
+
+const AddItem = ({ hidden, toggleHidden, addItem }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [createDate, setCreateDate] = useState(new Date().getDate());
-  const [dueDate, setDueDate] = useState("");
+  const [dueDate, setDueDate] = useState(new Date());
+
+  const ExampleCustomInput = ({ value, onClick }) => (
+    <button className="example-custom-input" onClick={onClick}>
+      {value}
+    </button>
+  );
+
+  const submitForm = () => {
+    if (title && description && dueDate) {
+      addItem({
+        id: uuid(),
+        title,
+        description,
+        date: `${dueDate.getDate()}-${
+          dueDate.getMonth() + 1
+        }-${dueDate.getFullYear()}`,
+      });
+      setTitle("");
+      setDescription("");
+    } else alert("please fill form correctly");
+  };
 
   return (
-    <div className="add-item">
+    <div className={hidden ? "display-none " : "add-item"}>
       <img
-        class="close-btn"
+        onClick={toggleHidden}
+        className="close-btn"
         src={require("../../assets/close.png")}
         alt="close"
       />
@@ -26,8 +56,17 @@ const AddItem = () => {
         type="text"
         onChange={(e) => setDescription(e.target.value)}
       />
+      <DatePicker
+        selected={dueDate}
+        onChange={(date) => setDueDate(date)}
+        closeOnScroll={true}
+        customInput={<ExampleCustomInput />}
+        minDate={new Date()}
+        withPortal
+      />
       <img
-        class="done-btn"
+        onClick={submitForm}
+        className="done-btn"
         src={require("../../assets/check.png")}
         alt="check-icon"
       />
@@ -35,4 +74,13 @@ const AddItem = () => {
   );
 };
 
-export default AddItem;
+const mapStateToProps = (state) => ({
+  hidden: state.task.hidden,
+});
+
+const mapsDispatchToProps = (dispatch) => ({
+  toggleHidden: () => dispatch(toggleHidden()),
+  addItem: (item) => dispatch(addItem(item)),
+});
+
+export default connect(mapStateToProps, mapsDispatchToProps)(AddItem);

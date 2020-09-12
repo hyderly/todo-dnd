@@ -39,3 +39,18 @@
 .done-btn:hover {
   cursor: pointer;
 }
+
+.display-none {
+  display: none;
+}
+
+.example-custom-input {
+  background-color: #eb5354;
+  color: #fff;
+  width: 300;
+  height: 50px;
+  outline: none;
+  border: 1px solid #2d4059;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
