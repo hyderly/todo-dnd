@@ -1,0 +1,47 @@
+.item {
+    background-color: #fff;
+    color: #222;
+    width: 100%;
+    height: auto;
+    padding: 15px 0px;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: 0 0 10px 15px rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+.delete-item {
+    position: absolute;
+    top: 0px;
+    right: 0;
+}
+
+.item-title {
+    font-size: 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: #2d4059;
+    color: #fff;
+    box-shadow: 0 0 10px 15px rgba(0, 0, 0, .05);
+    position: absolute;
+    top: -40px;
+    left: -5px;
+    width: 50%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.item-description {
+    margin-top: 50px;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.item-date {
+    font-size: 12px;
+    color: rgb(65, 65, 65);
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+}

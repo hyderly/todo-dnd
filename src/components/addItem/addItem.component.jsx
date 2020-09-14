@@ -8,7 +8,11 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import { connect } from "react-redux";
 //redux
-import { toggleHidden, addItem } from "../../redux/task/task.actions";
+import {
+  toggleHidden,
+  addItem,
+  deleteItem,
+} from "../../redux/task/task.actions";
 
 const AddItem = ({ hidden, toggleHidden, addItem }) => {
   const [title, setTitle] = useState("");
@@ -33,6 +37,7 @@ const AddItem = ({ hidden, toggleHidden, addItem }) => {
       });
       setTitle("");
       setDescription("");
+      toggleHidden();
     } else alert("please fill form correctly");
   };
 
@@ -81,6 +86,7 @@ const mapStateToProps = (state) => ({
 const mapsDispatchToProps = (dispatch) => ({
   toggleHidden: () => dispatch(toggleHidden()),
   addItem: (item) => dispatch(addItem(item)),
+  deleteItem: (item) => dispatch(deleteItem(item)),
 });
 
 export default connect(mapStateToProps, mapsDispatchToProps)(AddItem);

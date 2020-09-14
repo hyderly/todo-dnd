@@ -9,9 +9,9 @@ import MainBox from "../main-box/main-box.component";
 //redux
 import { toggleHidden } from "../../redux/task/task.actions";
 
-import "../../App.css";
+import "./homepage.styles.css";
 
-const HomePage = ({ items, hidden, toggleHidden }) => {
+const HomePage = ({ hidden, toggleHidden }) => {
   return (
     <div className="homepage">
       <h1 className="app__title">Task Tracker</h1>

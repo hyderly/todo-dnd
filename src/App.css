@@ -1,16 +1,7 @@
 .app {
   text-align: center;
   overflow: hidden;
-}
-
-.homepage {
-  background-color: #decdc3;
-  width: 100vw;
-  max-height: 100vh !important;
-  height: 100vh !important;
-  margin: 0 auto;
-  border-radius: 10px;
-  padding: 30px 0;
+  height: 100vh;
 }
 
 .close {
