@@ -1,0 +1,33 @@
+.confirm-box {
+    width: 400px;
+    height: 300px;
+    padding: 15px 20px;
+    background-color: #decdc3;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+}
+
+
+.confirm-box-txt {
+    font-size: 22px;
+    color: #222;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.btn {
+    width: 90%;
+    height: 30px;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.btn-1 {
+    background-color: #ea5455;
+}
+
+.btn-2 {
+    background-color: #2d4059;
+}

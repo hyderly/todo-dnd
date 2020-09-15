@@ -9,12 +9,12 @@ const MainBox = () => (
       <p className="box-1-text">To-Do</p>
       <List />
     </div>
-    <div className="box-2">
+    {/* <div className="box-2">
       <p className="box-2-text">Progress</p>
     </div>
     <div className="box-3">
       <p className="box-3-text">Completed</p>
-    </div>
+    </div> */}
   </div>
 );
 

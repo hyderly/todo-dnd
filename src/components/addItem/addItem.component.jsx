@@ -67,7 +67,6 @@ const AddItem = ({ hidden, toggleHidden, addItem }) => {
         closeOnScroll={true}
         customInput={<ExampleCustomInput />}
         minDate={new Date()}
-        withPortal
       />
       <img
         onClick={submitForm}

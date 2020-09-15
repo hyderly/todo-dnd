@@ -1,15 +1,10 @@
 import { createStore, applyMiddleware } from "redux";
-
-import { combineReducers } from "redux";
-
+import { persistStore } from "redux-persist";
 import { logger } from "redux-logger";
-
-import taskReducer from "./task/task.reducer";
+import rootReducer from "./task/rootReducer";
 
 const middleware = [logger];
 
-const rootReducer = combineReducers({
-  task: taskReducer,
-});
-
 export const store = createStore(rootReducer, applyMiddleware(...middleware));
+
+export const persistor = persistStore(store);

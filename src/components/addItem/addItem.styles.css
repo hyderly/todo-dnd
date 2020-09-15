@@ -1,7 +1,7 @@
 .add-item {
   width: 300px;
   max-height: 300px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   border-radius: 20px;
   background-color: #2d4059;
   display: flex;
@@ -9,7 +9,11 @@
   justify-content: center;
   align-items: center;
   padding: 30px 50px;
-  position: relative;
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  transform: translate(-5%, -20%);
+  z-index: 100;
 }
 
 .close-btn {

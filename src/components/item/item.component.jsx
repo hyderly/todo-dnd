@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import "./item.styles.css";
 
 import { deleteItem } from "../../redux/task/task.actions";
+import Confirmation from "../confirmation/confirmation.component";
 
 const Item = ({ item, deleteItem }) => {
   const { title, description, date } = item;
